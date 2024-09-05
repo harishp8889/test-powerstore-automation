@@ -20,6 +20,7 @@ package controller
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/dell/gopowerstore"
 	"google.golang.org/grpc/codes"
@@ -109,6 +110,7 @@ type SCSISnapshotter struct{}
 func (*SCSISnapshotter) GetExistingSnapshot(ctx context.Context, snapName string, client gopowerstore.Client) (GeneralSnapshot, error) {
 	snap, err := client.GetVolumeByName(ctx, snapName)
 	if err != nil {
+		fmt.Println("test")
 		return VolumeSnapshot{}, status.Errorf(codes.Internal,
 			"can't find volume snapshot '%s'", snapName)
 	}
