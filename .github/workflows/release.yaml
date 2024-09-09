@@ -7,8 +7,5 @@ on:
 
 jobs:
   csm-release:
+    uses: dell/common-github-actions/.github/workflows/csm-release.yaml@reusuable-release-workflow
     name: Releases Driver
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the code
-        uses: dell/common-github-actions/csm-release@reusuable-release-workflow
