@@ -1,0 +1,12 @@
+name: Workflow
+# Invocable as a reusable workflow
+# Can be manually triggered
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  # golang static analysis checks
+  Release:
+    uses: dell/common-github-actions/.github/workflows/csm-release.yaml@reusuable-release-workflow
+    name: Release-bot
