@@ -16,4 +16,6 @@ jobs:
   csm-release:
     uses: dell/common-github-actions/.github/workflows/csm-release-driver-module.yaml@driver_module_release
     name: Release CSM Drivers and Modules
-    secrets: inherit
+    with:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
