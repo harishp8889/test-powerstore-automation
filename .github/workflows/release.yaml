@@ -7,6 +7,7 @@ on:  # yamllint disable-line rule:truthy
     inputs:
       version:
         description: 'Version to release (major, minor, patch), Example: 1.x.x'
+        default: '1.1.1'
         required: true
       image:
         description: 'Image name, Example: csi-powerstore'
