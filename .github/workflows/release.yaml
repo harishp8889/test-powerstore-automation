@@ -17,4 +17,5 @@ jobs:
   csm-release:
     uses: harishp8889/test-common-github-actions/.github/workflows/csm-release-driver-module.yaml@test-action
     name: Release CSM Drivers and Modules
+    secrets: inherit
 
