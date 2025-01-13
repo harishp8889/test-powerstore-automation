@@ -10,11 +10,11 @@ on:  # yamllint disable-line rule:truthy
         required: true
       image:
         description: 'Image name. Example: csi-powerstore'
-        default: 'csi-powerstore'
+        default: 'github-actions-test'
         required: true
 jobs:
   csm-release:
-    uses: dell/common-github-actions/.github/workflows/csm-release-driver-module.yaml@main
+    uses: harishp8889/test-common-github-actions/.github/workflows/csm-release-driver-module.yaml@main
     name: Release CSM Drivers and Modules
     with:
       version: ${{ github.event.inputs.version }}
