@@ -8,15 +8,15 @@ on:  # yamllint disable-line rule:truthy
       version:
         description: 'Version to release (major, minor, patch), Example: 1.x.x'
         required: true
-      image:
-        description: 'Image name. Example: csi-powerstore'
-        default: 'github-actions-test'
-        required: true
+      images:
+        description: "List of image names. Example: csi-powerstore, csi-isilon"
+        type: string
+        required: true  
 jobs:
   csm-release:
     uses: harishp8889/test-common-github-actions/.github/workflows/csm-release-driver-module.yaml@main
     name: Release CSM Drivers and Modules
     with:
       version: ${{ github.event.inputs.version }}
-      image: ${{ github.event.inputs.image }}
+      images: ${{ github.event.inputs.images }}
     secrets: inherit
