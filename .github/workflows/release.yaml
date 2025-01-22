@@ -9,6 +9,7 @@ on:  # yamllint disable-line rule:truthy
           description: 'Select version to release'
           required: true
           type: choice
+          default: 'minor'
           options:
             - major
             - minor
