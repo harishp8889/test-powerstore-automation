@@ -19,6 +19,6 @@ jobs:
     uses: harishp8889/test-common-github-actions/.github/workflows/csm-release-driver-module.yaml@main
     name: Release CSM Drivers and Modules
     with:
-      version: ${{ github.event.inputs.version }}
+      version: ${{ github.event.inputs.option }}
       images: "csi-powerstore"
     secrets: inherit
