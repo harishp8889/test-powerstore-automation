@@ -5,18 +5,19 @@ on:  # yamllint disable-line rule:truthy
   workflow_call:
   workflow_dispatch:
     inputs:
-      version:
-        description: 'Version to release (major, minor, patch), Example: 1.x.x'
-        required: true
-      images:
-        description: "List of image names. Example: csi-powerstore, csi-isilon"
-        type: string
-        required: true  
+      option:
+          description: 'Select version to release'
+          required: true
+          type: choice
+          options:
+            - major
+            - minor
+            - patch
 jobs:
   csm-release:
     uses: harishp8889/test-common-github-actions/.github/workflows/csm-release-driver-module.yaml@main
     name: Release CSM Drivers and Modules
     with:
       version: ${{ github.event.inputs.version }}
-      images: ${{ github.event.inputs.images }}
+      images: "csi-powerstore"
     secrets: inherit
