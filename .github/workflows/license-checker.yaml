@@ -2,13 +2,7 @@ name: Weekly License Header Check
 
 on:
   schedule:
-    - cron: '0 0 * * 1'  # Runs every Monday at 00:00 UTC
-  workflow_dispatch:
-    inputs:
-      autofix:
-        description: "Patch version to release. example: 2.1.x (Use this only if n-1/n-2 patch is selected)"
-        required: false
-        type: string
+    - cron: '0 0 * * 1'  # Runs every Monday at 00:00 UTC  
 jobs:
   license-check:
     name: Run License Header Checker
